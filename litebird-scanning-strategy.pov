@@ -15,6 +15,8 @@
 #declare prec_period_min = 192.348;
 #declare spin_period_min = 20.0;
 
+background { color White }
+
 camera {
   // Put here the aspect ratio as it is in the file
   // litebird-scanning-strategy.ini
@@ -87,11 +89,11 @@ light_source {
     object {
       cylinder {
         <0, 0, 0>, <0, 1000, 0>,
-        0.1
+        0.2
       }
       
       translate 8*y
-      pigment { DimGray }
+      pigment { DimGray * 2 }
       no_shadow
     }
     
@@ -99,12 +101,12 @@ light_source {
     object {
       cylinder {
         <0, 0, 0>, <0, 1000, 0>,
-        0.1
+        0.2
       }
       
       rotate bore_spin_angle*z
       translate 8*y
-      pigment { Red }
+      pigment { Red * 2 }
       no_shadow
     }
 
@@ -112,12 +114,12 @@ light_source {
     object {
       cylinder {
         <0, 0, 0>, <0, 1000, 0>,
-        0.1
+        0.2
       }
 
       rotate -bore_spin_angle*z
       translate 8*y
-      pigment { Green }
+      pigment { Green * 2 }
       no_shadow
     }
   }
@@ -135,7 +137,7 @@ object {
 
 // Sun-L2 direction
 cylinder {
-  SUN_POSITION, <0, 0, 0>, 0.1
-  pigment { Blue }
+  SUN_POSITION, <0, 0, 0>, 0.2
+  pigment { Blue * 10 }
   no_shadow
 }
